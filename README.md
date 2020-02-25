@@ -10,3 +10,5 @@ Some setting are located at **config.py**
 * 3 - print errors, log and debug messages. 
 
 Some test are located at **tests.py**
+
+Server get valute data from <http://cbr.ru/>
