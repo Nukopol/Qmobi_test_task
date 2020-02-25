@@ -26,7 +26,7 @@ def logging(type, message):
 class Server:
     def __init__(self):
         self._port = config.PORT
-        self.serve_forever()
+        # self.serve_forever()
 
     def serve_forever(self):
         serv_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
@@ -205,7 +205,7 @@ class Server:
             response["req_value"] = valute
 
             # convert to RUB
-            f_value = float(value.replace(',', '.'))
+            f_value = float(str(value).replace(',', '.'))
             result_value = round(f_value * rates["valCurs"][valute], 4)
             logging("DEBUG", "result valur: " + str(result_value))
 
@@ -260,7 +260,7 @@ class HTTPError(Exception):
 
 if __name__ == '__main__':
     serv = Server()
-    # try:
-    #     serv.serve_forever()
-    # except (Exception) as error:
-    #     logging("ERROR", str(error))
+    try:
+        serv.serve_forever()
+    except (Exception) as error:
+        logging("ERROR", str(error))
