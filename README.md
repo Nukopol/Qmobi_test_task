@@ -12,3 +12,15 @@ Some setting are located at **config.py**
 Some test are located at **tests.py**
 
 Server get valute data from <http://cbr.ru/>
+
+Example request: http://localhost:53210/converter?valute=USD&value=300
+Example response:
+```json
+{
+    "valute": "USD",
+    "rate": 64.9213,
+    "rate_date": "26.02.2020",
+    "req_value": "USD",
+    "res_value": 19476.39
+}
+```
